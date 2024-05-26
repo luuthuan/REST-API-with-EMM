@@ -1,0 +1,20 @@
+{
+  "name": "rest-api-with-emm",
+  "version": "1.0.0",
+  "description": "create a REST API with Express, Mongoose, MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "luuthuan",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.6.2",
+    "mongoose": "^8.4.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.1"
+  }
+}
