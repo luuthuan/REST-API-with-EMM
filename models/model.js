@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// author schema
 const authorSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -15,6 +16,7 @@ const authorSchema = new mongoose.Schema({
   ],
 });
 
+// book schema
 const bookSchema = new mongoose.Schema({
   name: {
     type: String,
