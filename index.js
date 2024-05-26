@@ -4,6 +4,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
+const authorRoute = require("./routes/author.routes");
 
 const app = express();
 
@@ -21,8 +22,10 @@ const connection = async () => {
     console.error("Failed to connect MongoDB", error);
   }
 };
-
 connection();
+
+// ROUTES
+app.use("/v1/author", authorRoute);
 
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);
