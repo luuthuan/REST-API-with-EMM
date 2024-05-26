@@ -3,7 +3,23 @@ const { Book, Author } = require("../models/schema.model");
 const authorController = {
   // ADD AUTHOR
   addAuthor: async (req, res) => {
-    res.status(200).json(req.body);
+    try {
+      const newAuthor = new Author(req.body);
+      const saveAuthor = await newAuthor.save();
+      res.status(200).json(saveAuthor);
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  },
+
+  // GET ALL AUTHORS
+  getAllAuthors: async (req, res) => {
+    try {
+      const authors = await Author.find();
+      res.status(200).json(authors);
+    } catch (error) {
+      res.status(500).json(error);
+    }
   },
 };
 
