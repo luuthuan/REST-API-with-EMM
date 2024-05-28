@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
 const authorRoute = require("./routes/author.routes");
+const bookRoute = require("./routes/book.routes");
 
 const app = express();
 
@@ -26,6 +27,7 @@ connection();
 
 // ROUTES
 app.use("/v1/author", authorRoute);
+app.use("/v1/book", bookRoute);
 
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);
